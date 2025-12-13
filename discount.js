@@ -1,4 +1,4 @@
-let amount= 7800;
+let amount= -899;
 let dis=0;
 
 console.log("---Amount ----  discount--");
@@ -9,7 +9,7 @@ console.log("---above 9000 ----  20 % --");
 
 console.log("\n");
 
-
+if(amount>=0){
 
 if(amount>=0 && amount<=5000){
     dis=0
@@ -27,6 +27,11 @@ else  if(amount>9000)
 }
  console.log("Discounted amount : ", Math.floor((dis*amount)/100)); 
  console.log("Your final amount after discount is : ", amount-Math.floor((dis*amount)/100)); 
+}
+else{
+   console.log("Wrong Input");
+   
+}
 
 
 

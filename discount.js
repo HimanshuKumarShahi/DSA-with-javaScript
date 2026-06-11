@@ -1,4 +1,4 @@
-let amount= -899;
+let amount= 499
 let dis=0;
 
 console.log("---Amount ----  discount--");

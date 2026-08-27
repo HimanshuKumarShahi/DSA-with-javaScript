@@ -1,5 +1,5 @@
 //  let age="rakesh"
- let age=18
+ let age=50
 
  if(isNaN(age)){
     console.log("Please enter valid input");

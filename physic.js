@@ -63,3 +63,18 @@ const trainSpeed = 60;
 const trainTime = 120; 
 console.log(`[TRAIN] Distance Traveled: ${Kinematics.calcDistance(trainSpeed, trainTime)} m`);
 
+// Scenario B: Heavy Tank (Linear Acceleration)
+const tankInitialV = 0;   
+const tankFinalV = 12;    
+const tankTime = 8;       
+const tankAcc = Kinematics.calcAcceleration(tankInitialV, tankFinalV, tankTime);
+const tankDisp = Kinematics.calcDisplacement(tankInitialV, tankTime, tankAcc);
+console.log(`[TANK] Acceleration: ${tankAcc} m/s² | Displacement: ${tankDisp} m`);
+
+// Scenario C: Speed Boat on Flowing Water (Vector Addition)
+const boatVelocity = new Vector2D(25, 90, "Speed Boat (North)");
+const waterFlow = new Vector2D(6, 0, "River Current (East)");   
+const actualPath = boatVelocity.add(waterFlow);
+
+console.log(`[BOAT] Actual Velocity (Relative to shore): ${actualPath.magnitude.toFixed(2)} m/s`);
+console.log(`[BOAT] Actual Heading (Degrees): ${actualPath.direction.toFixed(2)}°`);

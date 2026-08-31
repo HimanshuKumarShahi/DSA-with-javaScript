@@ -26,6 +26,35 @@ class Kinematics {
   }
 }
 
+// 2. Vector Mathematics 
+class Vector2D {
+  constructor(magnitude, directionDegrees, label) {
+    this.magnitude = magnitude;
+    this.direction = directionDegrees; 
+    this.label = label;
+  }
+
+  getComponents() {
+    const radians = this.direction * (Math.PI / 180);
+    return {
+      x: this.magnitude * Math.cos(radians),
+      y: this.magnitude * Math.sin(radians)
+    };
+  }
+
+  add(otherVector) {
+    const v1 = this.getComponents();
+    const v2 = otherVector.getComponents();
+    const rx = v1.x + v2.x;
+    const ry = v1.y + v2.y;
+
+    const resultantMagnitude = Math.sqrt(rx * rx + ry * ry);
+    let resultantDirection = Math.atan2(ry, rx) * (180 / Math.PI);
+    if (resultantDirection < 0) resultantDirection += 360;
+
+    return new Vector2D(resultantMagnitude, resultantDirection, `Resultant of ${this.label} & ${otherVector.label}`);
+  }
+}
 
 
 
